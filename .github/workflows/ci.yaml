@@ -4,8 +4,6 @@ name: CI/CD Pipeline
 on:
   push:
     branches: [main]
-    paths:
-      - 'app/**'
 
 env:
   REGISTRY: ghcr.io
