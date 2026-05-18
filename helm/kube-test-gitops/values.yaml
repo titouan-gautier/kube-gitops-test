@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/titouan-gautier/kube-test-gitops
-  tag: "latest"
+  tag: "7785c9d23915e70dfaa5665650027ce7d2cac02a"
   pullPolicy: IfNotPresent
 
 replicaCount: 2
