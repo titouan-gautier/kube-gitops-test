@@ -1,0 +1,16 @@
+{{- if .Values.prometheus.scrape }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "mon-app.fullname" . }}
+  labels:
+    {{- include "mon-app.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "mon-app.selectorLabels" . | nindent 6 }}
+  endpoints:
+  - port: http
+    path: {{ .Values.prometheus.path }}
+    interval: 15s
+{{- end }}
