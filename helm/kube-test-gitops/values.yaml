@@ -1,0 +1,38 @@
+image:
+  repository: ghcr.io/titouan-gautier/kube-test-gitops
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+replicaCount: 2
+
+service:
+  type: ClusterIP
+  port: 3000
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "250m"
+    memory: "256Mi"
+
+config:
+  appVersion: "1.0.0"
+  logLevel: "info"
+
+ingress:
+  enabled: false
+  hostname: "mon-app.local"
+
+autoscaling:
+  enabled: false
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPU: 70
+
+# L'annotation clé pour Prometheus
+prometheus:
+  scrape: true
+  port: 3000
+  path: /metrics
