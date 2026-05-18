@@ -1,0 +1,24 @@
+# argocd-app.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-gitops-test
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/titouan-gautier/kube-gitops-test
+    targetRevision: main
+    path: helm/kube-gitops-test
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: production
+
+  syncPolicy:
+    automated:
+      prune: true       # supprime ce qui n'est plus dans Git
+      selfHeal: true     # corrige les modifs manuelles
+    syncOptions:
+      - CreateNamespace=true
