@@ -1,5 +1,5 @@
 image:
-  repository: ghcr.io/titouan-gautier/kube-test-gitops
+  repository: ghcr.io/titouan-gautier/kube-gitops-test
   tag: "99c073698a4610e92cea31766fac703b61dbbef5"
   pullPolicy: IfNotPresent
 
