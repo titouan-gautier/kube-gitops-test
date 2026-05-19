@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.get("/", (req, res) => {
-  res.json({ status: "ok", version: process.env.APP_VERSION || "1.0.0" });
+  res.json({ status: "ok", version: process.env.APP_VERSION || "1.0.0", message: 'Hello from the full stack !'});
 });
 
 app.get("/healthz", (req, res) => {
