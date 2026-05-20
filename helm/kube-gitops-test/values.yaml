@@ -4,6 +4,7 @@ image:
   pullPolicy: IfNotPresent
 
 replicaCount: 1
+revisionHistoryLimit: 1
 
 service:
   type: ClusterIP

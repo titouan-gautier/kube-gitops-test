@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/hello", (req, res) => {
-  res.json({ message: 'Hello, World! New Commit !' });
+  res.json({ message: 'Hello, World! Another New Commit !' });
 });
 
 app.get("/healthz", (req, res) => {
