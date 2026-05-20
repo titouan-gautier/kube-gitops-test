@@ -30,6 +30,10 @@ app.get("/", (req, res) => {
   res.json({ status: "ok", version: process.env.APP_VERSION || "1.0.0", message: 'Hello from the full stack !'});
 });
 
+app.get("/hello", (req, res) => {
+  res.json({ message: 'Hello, World!' });
+});
+
 app.get("/healthz", (req, res) => {
   res.json({ healthy: true });
 });

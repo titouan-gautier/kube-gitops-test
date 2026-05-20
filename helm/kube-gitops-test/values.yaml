@@ -3,7 +3,7 @@ image:
   tag: "fdf298e76f6c44b918ea9c8c1673419a7ffdd584"
   pullPolicy: IfNotPresent
 
-replicaCount: 2
+replicaCount: 1
 
 service:
   type: ClusterIP
@@ -27,7 +27,7 @@ ingress:
 
 autoscaling:
   enabled: false
-  minReplicas: 2
+  minReplicas: 1
   maxReplicas: 5
   targetCPU: 70
 
