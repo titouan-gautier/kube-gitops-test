@@ -23,7 +23,7 @@ config:
   logLevel: "info"
 
 ingress:
-  enabled: false
+  enabled: true
   hostname: "mon-app.local"
 
 autoscaling:
