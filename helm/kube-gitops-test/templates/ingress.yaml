@@ -7,8 +7,13 @@ metadata:
     {{- include "mon-app.labels" . | nindent 4 }}
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: selfsigned-issuer
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+    - {{ .Values.ingress.hostname }}
+    secretName: {{ .Release.Name }}-tls
   rules:
   - host: {{ .Values.ingress.hostname }}
     http:

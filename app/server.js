@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/hello", (req, res) => {
-  res.json({ message: 'Hello, World! No Commit ' });
+  res.json({ message: 'Hello, World! Auto Sign Certificate ' });
 });
 
 app.get("/healthz", (req, res) => {
